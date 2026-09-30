@@ -1,0 +1,18 @@
+# Secretos
+firebase-service-account.json
+.env
+
+# Datos locales / runtime
+tokens.json
+__pycache__/
+*.pyc
+
+# Entornos
+.venv/
+venv/
+
+# IDE / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
