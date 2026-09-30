@@ -1776,75 +1776,6 @@
 
 
     </section>
-
-
-
-
-
-    
-    <!-- ESTADO DEL ESP32 -->
-
-    <section class="card esp32-card">
-
-      <div class="card-title">
-        <h2>Estado del ESP32</h2>
-        <span id="esp32UltimoReporte">Esperando reporte...</span>
-      </div>
-
-      <div class="esp32-status-grid">
-
-        <div class="esp32-status-main">
-          <div id="esp32Dot" class="esp32-dot"></div>
-
-          <div>
-            <div id="esp32Estado" class="esp32-main-title">
-              Comprobando conexión...
-            </div>
-
-            <div id="esp32Calidad" class="esp32-main-subtitle">
-              Sin datos de señal
-            </div>
-          </div>
-        </div>
-
-        <div class="esp32-detail">
-          <div class="esp32-detail-label">Red Wi-Fi</div>
-          <div id="esp32SSID" class="esp32-detail-value">--</div>
-        </div>
-
-        <div class="esp32-detail">
-          <div class="esp32-detail-label">IP del ESP32</div>
-          <div id="esp32IP" class="esp32-detail-value">--</div>
-        </div>
-
-        <div class="esp32-detail">
-          <div class="esp32-detail-label">Señal</div>
-          <div id="esp32RSSI" class="esp32-detail-value">--</div>
-        </div>
-
-      </div>
-
-      <div class="esp32-actions">
-
-        <button
-          id="cambiarWifiEsp32"
-          class="btn btn-green esp32-wifi-btn"
-          type="button"
-          disabled
-        >
-          ⚙️ Cambiar red Wi-Fi
-        </button>
-
-        <p class="esp32-wifi-hint">
-          Para configurar la red, este celular o laptop debe estar conectado
-          a la misma red local que el ESP32.
-        </p>
-
-      </div>
-
-    </section>
-
-
 <div class="grid grid-2">
 
 
@@ -2399,6 +2330,71 @@
 
 
 
+
+
+    
+
+    <!-- ESTADO DEL ESP32 -->
+
+    <section class="card esp32-card">
+
+      <div class="card-title">
+        <h2>Estado del ESP32</h2>
+        <span id="esp32UltimoReporte">Esperando reporte...</span>
+      </div>
+
+      <div class="esp32-status-grid">
+
+        <div class="esp32-status-main">
+          <div id="esp32Dot" class="esp32-dot"></div>
+
+          <div>
+            <div id="esp32Estado" class="esp32-main-title">
+              Comprobando conexión...
+            </div>
+
+            <div id="esp32Calidad" class="esp32-main-subtitle">
+              Sin datos de señal
+            </div>
+          </div>
+        </div>
+
+        <div class="esp32-detail">
+          <div class="esp32-detail-label">Red Wi-Fi</div>
+          <div id="esp32SSID" class="esp32-detail-value">--</div>
+        </div>
+
+        <div class="esp32-detail">
+          <div class="esp32-detail-label">IP del ESP32</div>
+          <div id="esp32IP" class="esp32-detail-value">--</div>
+        </div>
+
+        <div class="esp32-detail">
+          <div class="esp32-detail-label">Señal</div>
+          <div id="esp32RSSI" class="esp32-detail-value">--</div>
+        </div>
+
+      </div>
+
+      <div class="esp32-actions">
+
+        <button
+          id="cambiarWifiEsp32"
+          class="btn btn-green esp32-wifi-btn"
+          type="button"
+          disabled
+        >
+          ⚙️ Cambiar red Wi-Fi
+        </button>
+
+        <p class="esp32-wifi-hint">
+          Para configurar la red, este celular o laptop debe estar conectado
+          a la misma red local que el ESP32.
+        </p>
+
+      </div>
+
+    </section>
 
 
     <div class="footer">
