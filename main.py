@@ -15,6 +15,7 @@ from firebase_admin import credentials, messaging
 
 
 import json
+import base64
 
 import os
 
@@ -42,13 +43,17 @@ app = FastAPI(
 
 
 
-cred = credentials.Certificate(
+firebase_b64 = os.getenv("FIREBASE_SERVICE_ACCOUNT_B64")
 
-    "firebase-service-account.json"
-
-)
-
-
+if firebase_b64:
+    firebase_info = json.loads(
+        base64.b64decode(firebase_b64).decode("utf-8")
+    )
+    cred = credentials.Certificate(firebase_info)
+else:
+    cred = credentials.Certificate(
+        "firebase-service-account.json"
+    )
 
 firebase_admin.initialize_app(cred)
 
@@ -70,7 +75,7 @@ conexiones = []
 
 
 
-TOKENS_FILE = "tokens.json"
+TOKENS_FILE = os.getenv("TOKENS_FILE", "tokens.json")
 
 
 
@@ -203,11 +208,15 @@ def cargar_tokens():
 
 def guardar_tokens():
 
-
-
     try:
 
+        carpeta_tokens = os.path.dirname(TOKENS_FILE)
 
+        if carpeta_tokens:
+            os.makedirs(
+                carpeta_tokens,
+                exist_ok=True
+            )
 
         with open(
 
