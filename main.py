@@ -4,7 +4,7 @@ from fastapi.responses import FileResponse
 
 from pydantic import BaseModel
 
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 
 
@@ -29,6 +29,12 @@ app = FastAPI(
 
     version="1.0"
 
+)
+
+
+# Hora oficial de Perú (UTC-5, sin horario de verano)
+ZONA_PERU = timezone(
+    timedelta(hours=-5)
 )
 
 
@@ -973,10 +979,10 @@ async def recibir_evento(
 
 
 
-    ahora = datetime.now().strftime(
-
-        "%H:%M:%S"
-
+    ahora = (
+        datetime.now(ZONA_PERU)
+        .strftime("%I:%M %p")
+        .lstrip("0")
     )
 
 
